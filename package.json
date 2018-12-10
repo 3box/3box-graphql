@@ -1,0 +1,16 @@
+{
+  "name": "3box-graphql",
+  "version": "0.0.1",
+  "description": "graphql service for 3box profiles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.2.1",
+    "apollo-server": "^2.2.6",
+    "graphql": "^14.0.2"
+  }
+}
