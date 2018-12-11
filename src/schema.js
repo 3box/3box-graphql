@@ -2,12 +2,13 @@ const { gql } = require('apollo-server');
 
 const typeDefs = gql`
 type Query {
-  profiles: [Profile]!
+  profiles(ids: [String]!): [Profile]
   profile(id: String!): Profile
 }
 
 type Profile {
   Name: String
+  rootStore: String
   did: String
   description: String
   spiritEmoji: Emoji

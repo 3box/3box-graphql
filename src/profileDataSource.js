@@ -6,9 +6,10 @@ class ProfileAPI extends RESTDataSource {
     this.baseURL = 'http://127.0.0.1:7000';
 
     // TODO move below, out of constructor
-    this.profileReducer =   (profile) => {
+    this.profileReducer =  (profile) => {
         return {
           Name: profile.Name,
+          rootStore: profile.rootStore,
           did: profile.did,
           description: profile.description ,
           email: profile.email,
@@ -20,9 +21,9 @@ class ProfileAPI extends RESTDataSource {
       }
 
     this.getProfileById = async ({ profileId }) => {
-      const res = await this.get('profile/' +  encodeURIComponent(profileId));
+      const res = await this.get('profile', {id: profileId});
       console.log(res)
-      return this.profileReducer(res);
+      return this.profileReducer(Object.assign({rootStore: profileId},res));
     }
   }
 
