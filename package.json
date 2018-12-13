@@ -11,6 +11,12 @@
   "dependencies": {
     "apollo-datasource-rest": "^0.2.1",
     "apollo-server": "^2.2.6",
-    "graphql": "^14.0.2"
+    "apollo-server-lambda": "^2.3.0",
+    "graphql": "^14.0.2",
+    "install": "^0.12.2",
+    "npm": "^6.5.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^3.31.3"
   }
 }
