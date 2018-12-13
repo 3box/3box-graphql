@@ -1,9 +1,11 @@
 # serverless.yml
 
-service: apollo-lambda
+service: threebox-graphql
 provider:
   name: aws
   runtime: nodejs8.10
+  stage: develop
+  region: us-west-2
 plugins:
   - serverless-offline
 functions:
