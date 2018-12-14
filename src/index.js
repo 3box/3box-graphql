@@ -3,8 +3,8 @@ const { ApolloServer } = require('apollo-server-lambda');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 
-const ProfileAPI = require('./profileDataSource.js');
-const ProfilesAPI = require('./profilesDataSource.js');
+const ProfileAPI = require('./datasource/profile.js');
+const ProfilesAPI = require('./datasource/profiles.js');
 
 const server = new ApolloServer({
   typeDefs,
