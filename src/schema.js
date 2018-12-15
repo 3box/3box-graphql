@@ -7,7 +7,8 @@ type Query {
 }
 
 type Profile {
-  Name: String
+  name: String
+  address: String
   rootStore: String
   did: String
   description: String

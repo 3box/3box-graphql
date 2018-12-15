@@ -3,7 +3,7 @@ const { RESTDataSource } = require('apollo-datasource-rest');
 class ProfilesAPI extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = 'http://127.0.0.1:7000';
+    this.baseURL = 'http://127.0.0.1:8080';
   }
 
   profileReducer(profile) {
@@ -18,7 +18,7 @@ class ProfilesAPI extends RESTDataSource {
   }
 
   async getProfilesByIds({ profileIds }) {
-    const res = await this.get('profileList', {addressList: profileIds});
+    const res = await this.post('profileList', {addressList: profileIds});
     return this.profilesReducer(res);
   }
 }
