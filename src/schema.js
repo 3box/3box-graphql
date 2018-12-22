@@ -8,39 +8,17 @@ type Query {
 
 type Profile {
   name: String
-  address: String
-  rootStore: String
   did: String
   description: String
-  spiritEmoji: Emoji
-  email: String
+  emoji: String
   location: String
   website: String
-  github: String
-  birthday: String
-  work: Work
-  education: Education
-}
-
-type Emoji {
-  no: ID!
-  code: String!
-  char: String!
-  name: String!
-  date: String!
-  keywords: [String!]!
-}
-
-type Work {
+  github_proof: String
   employer: String
-  jobTitle: String
-}
-
-type Education {
+  job: String
   school: String
   degree: String
   major: String
-  year: String
 }
 `
 
