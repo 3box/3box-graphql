@@ -1,26 +1,32 @@
-const { RESTDataSource } = require('apollo-datasource-rest');
+const { RESTDataSource } = require('apollo-datasource-rest')
 
 class ProfilesAPI extends RESTDataSource {
-  constructor() {
-    super();
-    this.baseURL = 'https://ipfs.3box.io';
+  constructor () {
+    super()
+    this.baseURL = 'https://ipfs.3box.io'
   }
 
-  profileReducer(profile) {
+  profileReducer (profile) {
+    try {
+      profile.image = profile.image[0].contentUrl['/']
+    } catch (err) {}
+    if (!profile.proof_eth_address) {
+      profile.proof_eth_address = JSON.stringify(profile.ethereum_proof)
+    }
     return profile
   }
 
-  profilesReducer(profiles) {
+  profilesReducer (profiles) {
     return Object.keys(profiles).reduce((acc, key) => {
-      acc.push(this.profileReducer(Object.assign({address: key}, profiles[key])))
+      acc.push(this.profileReducer(Object.assign({ eth_address: key }, profiles[key])))
       return acc
     }, [])
   }
 
-  async getProfilesByIds({ profileIds }) {
-    const res = await this.post('profileList', {addressList: profileIds});
-    return this.profilesReducer(res);
+  async getProfilesByIds ({ profileIds }) {
+    const res = await this.post('profileList', { addressList: profileIds })
+    return this.profilesReducer(res)
   }
 }
 
-module.exports = ProfilesAPI;
+module.exports = ProfilesAPI

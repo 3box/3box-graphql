@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-lambda');
+const { gql } = require('apollo-server-lambda')
 
 const typeDefs = gql`
 type Query {
@@ -8,18 +8,18 @@ type Query {
 
 type Profile {
   name: String
-  did: String
-  description: String
+  image: String
   emoji: String
+  description: String
+  eth_address: String
+  did: String
   location: String
   website: String
-  github_proof: String
-  employer: String
-  job: String
-  school: String
-  degree: String
-  major: String
+  proof_github: String
+  proof_twitter: String
+  proof_did: String
+  proof_eth_address: String
 }
 `
 
-module.exports = typeDefs;
+module.exports = typeDefs
