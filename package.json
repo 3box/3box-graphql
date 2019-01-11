@@ -11,11 +11,11 @@
   "license": "Apache-2.0",
   "dependencies": {
     "apollo-datasource-rest": "^0.2.1",
-    "apollo-server-lambda": "^2.3.0",
+    "apollo-server-lambda": "^2.3.1",
     "graphql": "^14.0.2",
     "standard": "^12.0.1"
   },
   "devDependencies": {
-    "serverless-offline": "^3.31.3"
+    "serverless-offline": "^3.32.2"
   }
 }
