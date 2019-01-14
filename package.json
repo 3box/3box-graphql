@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/standard",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "Apache-2.0",
@@ -16,6 +16,7 @@
     "standard": "^12.0.1"
   },
   "devDependencies": {
+    "jest": "^23.6.0",
     "serverless-offline": "^3.32.2"
   }
 }
