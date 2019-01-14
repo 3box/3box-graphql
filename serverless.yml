@@ -6,13 +6,16 @@ provider:
   runtime: nodejs8.10
   stage: develop
   region: us-west-2
+
 plugins:
   - serverless-offline
+
 functions:
   graphql:
     handler: src/index.graphqlHandler
     events:
     - http:
+        path: /
         method: post
         cors: true
     - http:
