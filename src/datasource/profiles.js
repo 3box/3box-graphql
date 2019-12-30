@@ -1,9 +1,9 @@
 const { RESTDataSource } = require('apollo-datasource-rest')
 
 class ProfilesAPI extends RESTDataSource {
-  constructor () {
+  constructor (baseURL) {
     super()
-    this.baseURL = 'https://ipfs.3box.io'
+    this.baseURL = baseURL
   }
 
   profileReducer (profile) {
