@@ -1,0 +1,15 @@
+FROM node:10
+
+RUN npm install -g serverless
+
+WORKDIR /3box-graphql
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY src ./src
+COPY serverless.yml ./
+
+EXPOSE 3000
+
+CMD serverless offline start --noEnvironment
