@@ -1,6 +1,6 @@
 {
   "name": "3box-graphql",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "graphql service for 3box profiles",
   "main": "index.js",
   "scripts": {
