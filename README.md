@@ -78,3 +78,6 @@ To deploy: (must also have AWS keys configured)
 ```bash
 $ serverless deploy
 ```
+
+## Maintainers
+[@zachferland](https://github.com/zachferland)
